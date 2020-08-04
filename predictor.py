@@ -4,13 +4,6 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 plt.style.use("dark_background")
 apple = pd.read_csv("AAPL.csv")
-plt.figure(figsize=(12, 5))
-plt.plot(apple['Adj Close Price'], label='Apple')
-plt.title('Apple Adj Close Price History')
-plt.xlabel("May 27,2014 - May 25,2020 ")
-plt.ylabel("Adj Close Price USD ($)")
-plt.legend(loc="upper left")
-plt.show()
 sma30 = pd.DataFrame()
 sma30['Adj Close Price'] = apple['Adj Close Price'].rolling(window=30).mean()
 sma100 = pd.DataFrame()
